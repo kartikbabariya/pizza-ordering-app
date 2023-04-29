@@ -128,32 +128,6 @@ function PizzaCheckBox() {
                                 )
                             })
                         }
-                        {/* <motion.div
-                            initial={{ opacity: 0 }}
-                            // animate={{
-                            //     y: 160,
-                            //     opacity: 1,
-                            // }}
-                            animate={{
-                                y: selectedIngredients["tomato_thumbnail"] ? 160 : -100,
-                                opacity: selectedIngredients["tomato_thumbnail"] ? 1 : 0,
-                              }}
-                            transition={{ duration: 1 }}
-                            className="ingredients z4"
-                        >
-                            <img src={tomato_thumbnail} alt="Pizza Base" height="100%" width="100%" style={{borderRadius : "100%"}} />
-                        </motion.div> */}
-                        {/* <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                y: 160,
-                                opacity: 1,
-                            }}
-                            transition={{ duration: 1 }}
-                            className="ingredients z4"
-                        >
-                            <img src={pedrons_thumbnail} alt="Pizza Base" height="100%" width="100%" style={{ borderRadius: "100%" }} />
-                        </motion.div> */}
                         <motion.div transition={{ duration: 1 }} >
                             <img src={PizzaBase} alt="Pizza Base" height="100%" width="100%" />
                         </motion.div>
