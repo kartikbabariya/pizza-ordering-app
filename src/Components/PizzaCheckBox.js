@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 function PizzaCheckBox() {
   const navigate = useNavigate();
+  
 
   const [availableIngredients, setAvailableIngredients] = useState([
     "Pepperoni",
