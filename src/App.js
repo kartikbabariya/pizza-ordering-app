@@ -4,7 +4,7 @@ import './App.css';
 import PizzaCheckBox from './Components/PizzaCheckBox';
 import Navbar from './Components/Navbar';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import CheckOut from './Components/CheckOut';
+import SelectedIngredients from './Components/SelectedIngredients';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
   <Navbar/>
       <Routes> 
       <Route path="/" element={<PizzaCheckBox />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/SelectedIngredients" element={<SelectedIngredients />} />
       </Routes>
     </BrowserRouter>
 
