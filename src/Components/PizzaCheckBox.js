@@ -28,7 +28,7 @@ function PizzaCheckBox() {
 
   //Handle Route
   const handleCheckout = () => {
-      navigate("/checkout", { state: selectedIngredients })
+      navigate("/ShowIngredients", { state: selectedIngredients })
   }
 
   const handleIngredientChange = (event) => {
