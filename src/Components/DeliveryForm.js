@@ -29,8 +29,6 @@ const DeliveryForm = () => {
             if (!address) error.address = "Address is Required !";
             if (!postCode) error.postCode = "Post Code is Required !";
 
-
-
             return setError({ ...error });
         }
 
