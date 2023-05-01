@@ -78,7 +78,7 @@ const ShowIngredients = () => {
                   return (
                     <>
                       <div className="col-6">
-                        <div class="input-group mt-3">
+                        <div class="input-group mt-3" style={{width : "100%"}}>
                           <div class="input-group-text" style={{ width: "100%", background: "#121619", border: "none" }}>
                           
                             <img className='my-1' src={require(`../Images/${ingredient}.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
