@@ -10,7 +10,6 @@ import Deliver from './Components/Deliver';
 function App() {
   return (
   <BrowserRouter>
-  <Navbar/>
       <Routes> 
       <Route path="/" element={<PizzaCheckBox />} />
         <Route path="/SelectedIngredients" element={<SelectedIngredients />} />

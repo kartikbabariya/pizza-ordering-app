@@ -2,12 +2,14 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>
-     
-<nav className="navbar navbar-light bg-light shadow-lg p-3 mb-5 bg-body rounded" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-  <a className="navbar-brand">PizzaOrder</a>
-</nav>
-    </div>
+    <nav class="navbar" style={{ background: "#ECA502" }}>
+      <div class="container">
+        <div class="navbar-brand text-white">
+          {/* <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" /> */}
+          Pizza Ordering App
+        </div>
+      </div>
+    </nav>
   )
 }
 
