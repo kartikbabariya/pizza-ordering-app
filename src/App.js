@@ -5,7 +5,7 @@ import PizzaCheckBox from './Components/PizzaCheckBox';
 import Navbar from './Components/Navbar';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import ShowIngredients from './Components/ShowIngredients';
-import Deliver from './Components/Deliver';
+import DeliveryForm from './Components/DeliveryForm';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Routes> 
       <Route path="/" element={<PizzaCheckBox />} />
         <Route path="/ShowIngredients" element={<ShowIngredients />} />
-        <Route path="/Order" element={<Deliver />} />
+        <Route path="/order" element={<DeliveryForm />} />
       </Routes>
     </BrowserRouter>
 
