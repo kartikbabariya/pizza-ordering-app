@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShowIngredients from './Components/ShowIngredients';
 import DeliveryForm from './Components/DeliveryForm';
 import MainPage from './Components/MainPage';
+import PizzaCustomizationPage from './Components/PizzaCustomizationPage';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/CustomizePage" element={<PizzaCheckBox />} />
+          <Route path="/CustomizePage" element={<PizzaCustomizationPage />} />
           <Route path="/ShowIngredients" element={<ShowIngredients />} />
           <Route path="/order" element={<DeliveryForm />} />
         </Routes>
