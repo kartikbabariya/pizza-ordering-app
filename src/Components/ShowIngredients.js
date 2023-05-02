@@ -11,19 +11,19 @@ const ShowIngredients = () => {
   console.log("location", location)
 
   useEffect(() => {
-    setSelectedIngredients(location?.state?.selectedIngredients)
+    setSelectedIngredients(location?.state)
   }, [])
 
   //Handle Order
   const handleOrder = () => {
-    navigate("/order", { state: { price: location.state.price } })
+    navigate("/order")
   }
 
 
 
   return (
     <>
-      <Navbar price={location.state.price} />
+      <Navbar />
 
       <div class="container m-4">
         <div class="text-center">
@@ -34,7 +34,7 @@ const ShowIngredients = () => {
             }}>
 
               {
-                selectedIngredient.map((data) => {
+                selectedIngredient?.map((data) => {
                   console.log("data", data)
                   return (
                     <>
@@ -49,7 +49,7 @@ const ShowIngredients = () => {
                           marginLeft: "80px"
                         }}
                       >
-                        <img src={require(`../Images/${data.ingredient}.jpg`)} alt="Pizza Base" height="100%" width="100%" style={{ borderRadius: "100%" }} />
+                        <img src={require(`../Images/${data}.jpg`)} alt="Pizza Base" height="100%" width="100%" style={{ borderRadius: "100%" }} />
                       </div>
 
 
@@ -81,15 +81,15 @@ const ShowIngredients = () => {
                               <div class="input-group mt-3" style={{ width: "100%" }}>
                                 <div class="input-group-text" style={{ width: "100%", background: "#121619", border: "none" }}>
 
-                                  <img className='my-1' src={require(`../Images/${ingredient.ingredient}.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
+                                  <img className='my-1' src={require(`../Images/${ingredient}.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
 
                                   <div className='mx-3 text-white'>
                                     <div>
-                                      <span>{ingredient.ingredient}</span>
+                                      <span>{ingredient}</span>
                                     </div>
-                                    <div className='d-flex flex-start'>
+                                    {/* <div className='d-flex flex-start'>
                                       <span>{ingredient.price}</span>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
                               </div>

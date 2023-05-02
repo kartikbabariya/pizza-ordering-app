@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-import PizzaCheckBox from './Components/PizzaCheckBox';
-import Navbar from './Components/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShowIngredients from './Components/ShowIngredients';
 import DeliveryForm from './Components/DeliveryForm';

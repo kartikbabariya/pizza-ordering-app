@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom'
 
 const DeliveryForm = () => {
 
-
     const localtion = useLocation()
 
     const [firstName, setFirstName] = useState("")
@@ -40,7 +39,7 @@ const DeliveryForm = () => {
 
     return (
         <>
-            <Navbar price={localtion.state.price}/>
+            <Navbar/>
             <div className="row">
                 <div className="col-6">
                     <div className="d-flex justify-content-center mt-5">

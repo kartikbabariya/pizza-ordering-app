@@ -2,17 +2,16 @@ import React from 'react'
 
 const Navbar = (props) => {
 
-  console.log(props)
 
   return (
-    <nav class="navbar" style={{ background: "#ECA502" }}>
+    <nav class="navbar" style={{ background: "#59E4A8" }}>
       <div class="container">
         <div class="navbar-brand text-white">
           {/* <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" /> */}
           Pizza Ordering App
         </div>
 
-        {
+        {/* {
           props &&
           <div className='text-end'>
             <div className='d-flex justify-content-center'>
@@ -21,7 +20,7 @@ const Navbar = (props) => {
               </div>
             </div>
           </div>
-        }
+        } */}
 
       </div>
     </nav>

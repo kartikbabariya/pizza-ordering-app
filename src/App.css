@@ -6,6 +6,11 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+.my-class {
+  border: 5px solid #fff;
+  border-style: dashed;
+}
+
 .mainPage_image{
   height: 100vh;
   width: 100vw;
