@@ -6,9 +6,13 @@ const SelectedIngredients = () => {
   const history = useLocation();
 
   const [item, setItem] = useState([]);
+  const [price, setPrice] = useState(0);
+
+
 
   useEffect(() => {
-    setItem(history.state);
+    setItem(history.state.selectedIngredients);
+    setPrice(history.state.price);
   }, []);
 
 
