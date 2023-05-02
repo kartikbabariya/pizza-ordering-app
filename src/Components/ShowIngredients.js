@@ -16,14 +16,14 @@ const ShowIngredients = () => {
 
   //Handle Order
   const handleOrder = () => {
-    navigate("/order")
+    navigate("/order", { state: { price: location.state.price } })
   }
 
 
 
   return (
     <>
-      <Navbar price={location.state.price}/>
+      <Navbar price={location.state.price} />
 
       <div class="container m-4">
         <div class="text-center">

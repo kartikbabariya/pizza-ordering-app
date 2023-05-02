@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import Delivery from "../Images/delivery.jpg"
 import Navbar from './Navbar'
+import { useLocation } from 'react-router-dom'
 
 const DeliveryForm = () => {
+
+
+    const localtion = useLocation()
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -36,7 +40,7 @@ const DeliveryForm = () => {
 
     return (
         <>
-            <Navbar />
+            <Navbar price={localtion.state.price}/>
             <div className="row">
                 <div className="col-6">
                     <div className="d-flex justify-content-center mt-5">
