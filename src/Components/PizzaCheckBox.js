@@ -18,33 +18,30 @@ function PizzaCheckBox() {
     ]);
 
     const [pizzaSauce, setPizzaSauce] = useState([
-        { sauce: 'Cheese Sauce', price: 3 }, { sauce: 'Tomato Sauce', price: 2 }])
+        { ingredient: 'Cheese Sauce', price: 3 }, { ingredient: 'Tomato Sauce', price: 2 }])
 
-    const [cheese, setCheese] = useState([{ cheese: 'Normal Cheese', price: 4 },
-    { cheese: 'Liquid Cheese', price: 5 }])
+    const [cheese, setCheese] = useState([
+    { ingredient: 'Liquid Cheese', price: 5 },{ ingredient: 'Normal Cheese', price: 4 }])
 
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [price, setPrice] = useState(0);
 
-    console.log("price", price)
 
 
-  //Handle Route
-  const handleCheckout = () => {
-      navigate("/ShowIngredients", { state: selectedIngredients })
-  }
-
+    //Handle Route
+    const handleCheckout = () => {
+        navigate("/ShowIngredients", { state: {selectedIngredients, price} })
+    }
 
 
     const handleIngredientChange = (event, value) => {
-        const selectedIngredient = event.target.value;
         if (event.target.checked) {
-            setSelectedIngredients((prevSelectedIngredients) => [...prevSelectedIngredients, selectedIngredient]);
+            setSelectedIngredients((prevSelectedIngredients) => [...prevSelectedIngredients, value]);
             setPrice(price + value.price)
         } else {
-            setSelectedIngredients((prevSelectedIngredients) => prevSelectedIngredients.filter((ingredient) => ingredient !== selectedIngredient));
+            setSelectedIngredients((prevSelectedIngredients) => prevSelectedIngredients.filter((ingredient) => ingredient !== value));
             setPrice(price - value.price)
-        } 
+        }
     };
 
 
@@ -62,7 +59,7 @@ function PizzaCheckBox() {
                             <div style={{ maxHeight: 530, maxWidth: 530, position: "relative" }}>
                                 {
                                     selectedIngredients.map((data) => {
-                                        console.log("data", data)
+
                                         return (
                                             <>
 
@@ -78,7 +75,7 @@ function PizzaCheckBox() {
                                                     }}
                                                     className="ingredients z4"
                                                 >
-                                                    <img src={require(`../Images/${data}.jpg`)} alt="Pizza Base" height="100%" width="100%" style={{ borderRadius: "100%" }} />
+                                                    <img src={require(`../Images/${data.ingredient}.jpg`)} alt="Pizza Base" height="100%" width="100%" style={{ borderRadius: "100%" }} />
                                                 </motion.div>
 
 
@@ -97,10 +94,10 @@ function PizzaCheckBox() {
 
                             </div>
 
-                           <div>
+                            <div>
 
-                           <button type="button" className='btn btn-primary mt-4' onClick={handleCheckout}>Checkout</button>
-                           </div>
+                                <button type="button" className='btn btn-primary mt-4' onClick={handleCheckout}>Checkout</button>
+                            </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
 
@@ -114,18 +111,19 @@ function PizzaCheckBox() {
                                             <h5>Select Pizza Sauce</h5>
                                             {
                                                 pizzaSauce.map((sauce, index) => {
+                                                    console.log("sauce", sauce)
                                                     return (
                                                         <>
 
                                                             <div class="input-group mt-3">
                                                                 <div class="input-group-text" style={{ width: "100%", background: "#121619", border: "none" }}>
-                                                                    <input class="form-check-input mt-0 mx-2" type="radio" name="flexRadioDefault" id={`flexRadioDefault${index}`} value={sauce.sauce} onChange={(e) => handleIngredientChange(e, sauce)} />
+                                                                    <input class="form-check-input mt-0 mx-2" type="radio" name="flexRadioDefault" id={`flexRadioDefault${index}`} value={sauce.ingredient} onChange={(e) => handleIngredientChange(e, sauce)} />
 
-                                                                    <img className='my-1' src={require(`../Images/${sauce.sauce}.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
+                                                                    <img className='my-1' src={require(`../Images/${sauce.ingredient}.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
 
                                                                     <div className='mx-3 text-white'>
                                                                         <div>
-                                                                            <span>{sauce.sauce}</span>
+                                                                            <span>{sauce.ingredient}</span>
                                                                         </div>
                                                                         <div className='d-flex flex-start'>
                                                                             <span>&#163; {sauce.price}</span>
@@ -152,13 +150,13 @@ function PizzaCheckBox() {
 
                                                             <div class="input-group mt-3">
                                                                 <div class="input-group-text" style={{ width: "100%", background: "#121619", border: "none" }}>
-                                                                    <input class="form-check-input mt-0 mx-2" type="checkbox" name="flexRadioDefault" value={sauce.cheese} onChange={(e) => handleIngredientChange(e, sauce)} />
+                                                                    <input class="form-check-input mt-0 mx-2" type="checkbox" name="flexRadioDefault" value={sauce.ingredient} onChange={(e) => handleIngredientChange(e, sauce)} />
 
-                                                                    <img className='my-1' src={require(`../Images/${sauce.cheese}_thumbnail.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
+                                                                    <img className='my-1' src={require(`../Images/${sauce.ingredient}_thumbnail.jpg`)} alt="Pizza Base" height="60px" width="60px" style={{ borderRadius: "50%" }} />
 
                                                                     <div className='mx-3 text-white'>
                                                                         <div>
-                                                                            <span>{sauce.cheese}</span>
+                                                                            <span>{sauce.ingredient}</span>
                                                                         </div>
                                                                         <div className='d-flex flex-start'>
                                                                             <span>&#163; {sauce.price}</span>

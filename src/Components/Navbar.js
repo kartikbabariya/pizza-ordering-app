@@ -17,9 +17,8 @@ const Navbar = (props) => {
           <div className='text-end'>
             <div className='d-flex justify-content-center'>
               <div className='mt-1'>
-                <span className='text-white' style={{fontSize : "22px"}}>Total Price : <span style={{ color: "black" , fontWeight : "600"}}>  {props.price} </span></span>
+                <span style={{ fontSize: "22px", color: "black", fontWeight: "600" }}> Total Price : {props.price} </span>
               </div>
-              
             </div>
           </div>
         }
