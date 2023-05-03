@@ -6,6 +6,11 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+.map{
+  height: 450px;
+  width: 450px;
+}
+
 .my-class {
   border: 5px solid #fff;
   border-style: dashed;
