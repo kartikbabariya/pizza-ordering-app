@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import { useLocation } from 'react-router-dom'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import Geocode from "react-geocode";
-
+import swal from 'sweetalert';
 
 const DeliveryForm = () => {
 
@@ -28,19 +28,43 @@ const DeliveryForm = () => {
         postCode: "",
     })
 
+    
+      
+
     const handleOrder = () => {
 
-        if (!firstName || !lastName) {
+        if (!firstName || !lastName || !number || !address) {
             const error = {};
 
             if (!firstName) error.firstName = "First Name is Required !";
             if (!lastName) error.lastName = "Last Name is Required !";
             if (!number) error.number = "Number is Required !";
             if (!address) error.address = "Address is Required !";
-            if (!postCode) error.postCode = "Post Code is Required !";
 
             return setError({ ...error });
+        }else{
+            const willDelete =  swal({
+                title: "Are you sure?",
+                text: "Do you want to deliver ?",
+                icon: "warning",
+                showCancelButton: true,
+                dangerMode: true,
+                buttons : true
+              });
+
+              console.log(willDelete, "will")
+
+              willDelete.then(() =>  swal("Delivered", "Your order will be deliverd !", "success")).catch((error) =>  console.log(error))
+               
+            //   if (willDelete) {
+            //     swal("Deleted!", "Your imaginary file has been deleted!", "success");
+            //   }else{
+            //     swal("Deleted!", "Your imaginary file has been deleted!", "danger");
+                
+            //   }
         }
+
+        
 
     }
 

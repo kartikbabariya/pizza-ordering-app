@@ -144,7 +144,7 @@ const PizzaCustomizationPage = () => {
                                                                             <span>{sauce.ingredient}</span>
                                                                         </div>
                                                                         <div className='d-flex flex-start'>
-                                                                            <span>10</span>
+                                                                            <span>{sauce.price}</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
