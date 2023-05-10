@@ -23,6 +23,6 @@ RUN rm -rf ./*
 
 COPY --from=nodework /PIZZA_ORDERING_APP/build .
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["nginx" , "-g" , "daemon off;"]
