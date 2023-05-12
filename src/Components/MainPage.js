@@ -19,7 +19,7 @@ const MainPage = () => {
                             fontSize: "50px",
                             color: "#fff"
                         }}>
-                            Welcome To Our Pizza Customization App
+                            Welcome To Our Pizza Customization App - DevOps(CI-CD)
                         </div>
                         <div className="d-flex justify-content-center mt-5">
                             <Link to="/CustomizePage">
