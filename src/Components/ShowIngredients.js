@@ -69,7 +69,7 @@ const ShowIngredients = () => {
 
 
               {/* ----------Selected Ingrediants ----------- */}
-              <div class="card mt-3" style={{ background: "#ECA502", borderColor: "#ECA502" }}>
+              <div class="card mt-3" style={{ background: "#59E4A8", borderColor: "#59E4A8" }}>
                 <div class="card-body">
                   <h5>Selected Ingrediants</h5>
                   <div class="d-flex justify-content-center" >
